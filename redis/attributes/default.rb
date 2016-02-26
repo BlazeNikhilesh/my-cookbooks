@@ -26,8 +26,8 @@ default[:redis][:server][:port]     = "6379"
 # Install
 #
 
-default[:redis][:version]           = "2.0.2"
-default[:redis][:release_url]       = "http://redis.googlecode.com/files/redis-:version:.tar.gz"
+default[:redis][:version]           = "3.0.7"
+default[:redis][:release_url]       = "http://download.redis.io/releases/redis-3.0.7.tar.gz"
 
 #
 # Tunables
