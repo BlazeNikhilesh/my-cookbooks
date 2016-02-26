@@ -24,7 +24,7 @@ if node['redisio']['package_install']
   end
 else
   include_recipe 'redisio::_install_prereqs'
-  include_recipe 'build-essential::default'
+  #include_recipe 'build-essential::default'
 
   redis = node['redisio']
   location = "#{redis['mirror']}/#{redis['base_name']}#{redis['version']}.#{redis['artifact_type']}"
