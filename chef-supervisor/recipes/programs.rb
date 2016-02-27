@@ -31,7 +31,6 @@ unless programs.nil?
 				:autostart => programs[key]['autostart'],
 				:autorestart => programs[key]['autorestart'],
 				:user => programs[key]['user'],
-				# :startsecs => programs[key]['startsecs'],
 				:numprocs => programs[key]['numprocs']
 			)
 			#notifies :restart, "service[supervisor]"
