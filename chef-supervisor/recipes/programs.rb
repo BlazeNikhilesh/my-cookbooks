@@ -31,12 +31,12 @@ unless programs.nil?
 				:autostart => programs[key]['autostart'],
 				:autorestart => programs[key]['autorestart'],
 				:user => programs[key]['user'],
-				:startsecs => programs[key]['startsecs'],
+				# :startsecs => programs[key]['startsecs'],
 				:numprocs => programs[key]['numprocs']
 			)
 			#notifies :restart, "service[supervisor]"
 			action :create
-		end	
+		end
 	end
 end
 
@@ -44,12 +44,12 @@ end
 if File.exists? "#{node.supervisor.sockfile}"
   execute "remove sockfile if exists" do
     command "unlink #{node.supervisor.sockfile}"
-    user "root"  
+    user "root"
   end
 end
 
 #we'll restart here rather than using a "notifies" on the template block above,
-#just to cover the case we actually want to remove all programs and don't want to run any anymore 
+#just to cover the case we actually want to remove all programs and don't want to run any anymore
 service "supervisor" do
   action :restart
 end
